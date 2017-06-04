@@ -47,8 +47,19 @@ int main( int argc, char *argv[] ) {
     fin.close();
   }
   // Run UPGMA until there is only one node left
+  int j = 1;
   while (head->next) {
+    cout << "---------------Printing UPGMA Round " << j << " (by rows)---------------" << endl;
+    printRowByRow(head);
+    cout << "--------------------------------------------------------------" << endl;
+   
+    cout << "---------------Printing UPGMA Round " << j << " (by columns)------------" << endl;
+    printColumnByColumn(head);
+    cout << "--------------------------------------------------------------" << endl;
+    
     UPGMA(head,tail);
+
+    j++;
   }
   // Print out name of last node
   if (head) {

@@ -3,6 +3,7 @@
 #include <limits>
 #include <algorithm>
 #include <vector>
+#include <iomanip>  
 double MIN_DISTANCE = 0.0;
 void addCluster(ClusterNode *&head, ClusterNode *&tail, const std::string& name)
 // adds a cluster (at the tail) and the corresponding row and column to data structure
@@ -331,11 +332,10 @@ void printRowByRow(ClusterNode *head)
 // Print DynMatrix row by row for debugging to ensure correctly linked Cluster and Distance Nodes
 {
   while(head) {
-    std::cout << head->name <<":\t";
+    std::cout << std::setw(10) << head->name <<":\t";
     DistanceNode *curD = head->row;
     while(curD) {
-      
-      std::cout << curD->distance<<"\t";
+      std::cout << curD->distance << "\t";
       curD = curD->nextInRow;
     }
     std::cout <<std::endl;
@@ -348,10 +348,10 @@ void printColumnByColumn(ClusterNode *head)
 // Print DynMatrix column by column for debugging to ensure correctly linked Cluster and Distance Nodes
 {
   while(head) {
-    std::cout << head->name <<":\t";
+    std::cout << std::setw(10) << head->name <<":\t";
     DistanceNode *curD = head->column;
     while(curD) {
-      std::cout << curD->distance<<"\t";
+      std::cout << curD->distance << "\t";
       curD = curD->nextInColumn;
     }
     std::cout <<std::endl;
