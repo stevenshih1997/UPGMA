@@ -5,8 +5,6 @@
 
 using namespace std;
 
-// construct a string representation 
-
 void usage() {
   cerr << "Usage: upgma species.txt" << endl;
 }
